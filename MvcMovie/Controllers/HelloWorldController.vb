@@ -16,5 +16,24 @@
             Return View()
         End Function
 
+        <HttpPost>
+        Public Function JqAJAX(persona As Student) As JsonResult
+            Return Json(New With {.msg = "Successfully added " + persona.Name})
+        End Function
+
+        <HttpPost>
+        Public Function AgregaListaPersonas(persona As List(Of Student)) As JsonResult
+            Try
+
+
+                Return Json(New With {.msg = "Successfully added " + persona.Count.ToString})
+            Catch ex As Exception
+                Throw
+            End Try
+        End Function
+
+
+
+
     End Class
 End Namespace
